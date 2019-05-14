@@ -4,12 +4,12 @@
 使用说明：
 
       var data = {
-            text: '', //title <br/>
-            state: {opened: true}, //opened icon展开/闭合, <br/>
+            text: '', //title 
+            state: {opened: true}, //opened icon展开/闭合, 
             children: [
-                  text: '', <br/>
-                  state: {}, //首期仅支持opened类型<br/>
-                  children: []<br/>
+                  text: '', 
+                  state: {}, //首期仅支持opened类型
+                  children: []
             ]
         }
   
