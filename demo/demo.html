@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tree</title>
+    <link rel="stylesheet" href="../assets/css/tree.css">
+</head>
+<body>
+    <div class="tree-menu"></div>
+</body>
+
+<!-- <script type="module">
+    import { Tree } from './index.js';
+</script> -->
+<script src="../index.js"></script>
+
+<script>
+    let data = {
+        text: '一级',
+        // isOpen: false,
+        state: {opened: true},
+        children: [ 
+            {
+                text: '二级1',
+                state: {opened: false},
+                children: [
+                    {
+                        text: '三级1-1',
+                        state: {opened: false},
+                        children: [
+                            {
+                                text: '四级1-1-1',
+                                state: {opened: false},
+                            }
+                        ]
+                    },
+                    {
+                        text: '三级1-2',
+                        state: {opened: false},
+                        children: [
+                            {
+                                text: '四级1-2-1',
+                                state: {selected: false},
+                            }
+                        ]
+                    }
+                ]
+            }, 
+            {
+                text: '二级2',
+                state: {opened: false},
+                children: [
+                    {
+                        text: '三级2-1',
+                        state: {opened: false},
+                        children: [
+                            {
+                                text: '四级2-1-1',
+                                state: {opened: false},
+                            }
+                        ]
+                    },
+                    {
+                        text: '三级2-2',
+                        state: {opened: false},
+                        children: [
+                            {
+                                text: '四级2-2-1',
+                                state: {opened: false},
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+    
+    let tree = new $Tree({el: document.querySelector('.tree-menu'), options: {data}});
+</script>
+</html>
