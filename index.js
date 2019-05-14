@@ -1,5 +1,5 @@
 class Tree {
-    constructor({el, options}) {
+    constructor({el, options = {}}) {
         this.el = el;
         this.options = {
             theme: 'default',
@@ -61,26 +61,30 @@ class Tree {
     render() {
         let doms = this.createElements(this.options.data);
         let root = `<div class='tree-wrapper'>${doms}</div>`
+        try {
+            this.el.addEventListener("click", (event) => {
+                let target = event.target || event.srcElement;
+                if (target === this.el) return;
+                if (target.className === this.defaultNameClss) { //点击导航名
+                    this.options.clickCallBack(target.innerText, target);
+                } else {//点击icon
+                    let type;
+                    this.defaultMenuType.map(str => {
+                        !type && (type = this.getMenuType(target.className, str));
+                    })
+                    let [opened, selected, disabled] =  this.defaultMenuType;
+                    switch(type) {
+                        case opened: this.changeStatus(target, target.className, 'close');
+                            break;
+                        case selected: break; //TODO: 增加 checbox， disabled    
+                    }
+                }   
+            })
+            this.el.innerHTML = root;
+        } catch(e) {
+            console.log('Please check the elements')
+        }
 
-        this.el.addEventListener("click", (event) => {
-            let target = event.target || event.srcElement;
-            if (target === this.el) return;
-            if (target.className === this.defaultNameClss) { //点击导航名
-                this.options.clickCallBack(target.innerText, target);
-            } else {//点击icon
-                let type;
-                this.defaultMenuType.map(str => {
-                    !type && (type = this.getMenuType(target.className, str));
-                })
-                let [opened, selected, disabled] =  this.defaultMenuType;
-                switch(type) {
-                    case opened: this.changeStatus(target, target.className, 'close');
-                        break;
-                    case selected: break; //TODO: 增加 checbox， disabled    
-                }
-            }   
-        })
-        this.el.innerHTML = root;
     }
 }
 

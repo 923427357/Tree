@@ -1,5 +1,5 @@
 # Tree
-原生js封装的Tree组件，目前紧支持唯一theme
+原生js封装的Tree组件，目前不支持theme切换
 
 使用说明：
 
