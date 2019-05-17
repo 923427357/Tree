@@ -88,6 +88,4 @@ class Tree {
     }
 }
 
-window.$Tree = Tree;
-
-// export default Tree;
+export default Tree;
