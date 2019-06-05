@@ -1,0 +1,32 @@
+/* 自定义展开icon样式 */
+.tree-wrapper .lab.arrow-icon-theme-gray::before {
+    pointer-events: auto;
+    content: '\e68d';
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 20px;
+    color: #999;
+}
+
+.tree-wrapper .lab.arrow-icon-theme-gray.open::before {
+    top: 10px;
+    transform: rotate(0deg);
+}
+
+.tree-wrapper .lab.arrow-icon-theme-gray.close::before {
+    top: 0;
+    transform: rotate(-90deg);
+}
+
+.tree-wrapper .lab.md.arrow-icon-theme-gray::before, .lab.sm.arrow-icon-theme-gray::before {
+    top: 5px;
+    left: 0;
+    height: 20px;
+}
+.tree-wrapper .lab.md.arrow-icon-theme-gray.close::before, .lab.sm.arrow-icon-theme-gray.close::before {
+    top: 0px;
+    height: 20px;
+    left: -5px;
+}

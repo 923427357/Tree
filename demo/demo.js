@@ -59,4 +59,5 @@ let data = {
     ]
 }
 
-let tree = new Tree({el: document.querySelector('.tree-menu'), options: {data}});
+// el: dom节点;   options: 配置项; iconClass: 自定义icon class;
+let tree = new Tree({el: document.querySelector('.tree-menu'), options: {data, iconClass: 'arrow-icon-theme-gray'}});

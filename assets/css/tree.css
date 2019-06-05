@@ -36,19 +36,24 @@
     pointer-events: auto;
 }
 
-.tree-wrapper .lab.has-menu::before {
+.tree-wrapper .lab.arrow-icon::before {
     pointer-events: auto;
     content: '\e68d';
+    /* background: url('../img/checked.png') no-repeat center / 20px; */
     position: absolute;
     left: 0;
-    top:  10px;
     width: 30px;
     height: 30px;
     line-height: 20px;
     color: #c0c4cc;
+}
+
+.tree-wrapper .lab.arrow-icon.open::before {
+    top: 10px;
     transform: rotate(0deg);
 }
-.tree-wrapper .lab.has-menu.close::before {
+
+.tree-wrapper .lab.arrow-icon.close::before {
     /* transform: rotate(-45deg); */
     top: 0;
     transform: rotate(-90deg);
@@ -68,14 +73,13 @@
     font-size: 24px;
     line-height: 40px;
     padding-left: 30px;
-
 }
-.tree-wrapper .lab.md.has-menu::before, .lab.sm.has-menu::before {
+.tree-wrapper .lab.md.arrow-icon::before, .lab.sm.arrow-icon::before {
     top: 5px;
     left: 0;
     height: 20px;
 }
-.tree-wrapper .lab.md.has-menu.close::before, .lab.sm.has-menu.close::before {
+.tree-wrapper .lab.md.arrow-icon.close::before, .lab.sm.arrow-icon.close::before {
     top: 0px;
     height: 20px;
     left: -5px;
