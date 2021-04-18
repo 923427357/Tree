@@ -15,3 +15,4 @@
   
         new $Tree({el: dom, options: {data}}); //创建实例
         
+＃测试
